@@ -30,9 +30,9 @@ const App = () => {
 
         <Navbar/>
 
-        <Routes>
+      <Routes>
 
-          <Route
+        <Route
             path="/"
             element={
               <Home     //HomePage components
@@ -44,7 +44,7 @@ const App = () => {
             }
           />
 
-          <Route 
+        <Route 
             path="/searchResults"
             element={
               <SearchResults        
@@ -70,22 +70,26 @@ const App = () => {
             }
           />
 
-          <Route
+        <Route
             path="/favorites"
             element={              
-              <Favorites favorites={favorites} />}                              
+              <Favorites favorites={favorites} />} //Route to Favorites page                             
           />
 
-<Route 
+        <Route 
             path="/MovieManAI"
             element={
-              <MovieManAI />
+              <MovieManAI /> // Route to MovieManAI page
+
             }
+            
           />
           
-          <Route path="/moodResults/:mood" element={<MoodResults />} />
+          <Route path="/moodResults/:mood"
+           element={<MoodResults /> // Route to MoodResults page
+            } /> 
           
-        </Routes>
+      </Routes>
         
 
 
