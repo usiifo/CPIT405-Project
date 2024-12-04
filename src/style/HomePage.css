@@ -6,10 +6,10 @@
 
 @keyframes fadeIn {
   from {
-      opacity: 0;
+    opacity: 0;
   }
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
@@ -22,12 +22,12 @@
 
 @keyframes slideDown {
   from {
-      transform: translateY(-50px);
-      opacity: 0;
+    transform: translateY(-50px);
+    opacity: 0;
   }
   to {
-      transform: translateY(0);
-      opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -44,12 +44,12 @@
 
 @keyframes slideUp {
   from {
-      transform: translateY(50px);
-      opacity: 0;
+    transform: translateY(50px);
+    opacity: 0;
   }
   to {
-      transform: translateY(0);
-      opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -89,4 +89,38 @@
 .random-movie-button:hover {
   background-color: #e91e63;
   transform: scale(1.1);
+}
+
+/* New Styles for Movie Poster Display */
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Adjust space between posters */
+  margin-top: 2rem;
+}
+
+.movie-card {
+  width: 200px; /* Adjust the width of each movie card */
+  height: auto; /* Keep the aspect ratio of the image */
+  overflow: hidden; /* Prevent overflow of image */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.movie-poster {
+  width: 100%; /* Make the poster fill the card's width */
+  height: 300px; /* Adjust the height */
+  object-fit: cover; /* Ensure the image covers the area without distortion */
+  border-radius: 5px;
+}
+
+.movie-title {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 10px;
+  font-weight: bold;
 }

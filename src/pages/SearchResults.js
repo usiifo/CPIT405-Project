@@ -1,13 +1,12 @@
 import React, {useEffect} from "react";
-import {Link, useLocation} from 'react-router-dom';  // useLocation: it allows to access the current location and pass the state to that location, for example when i go to the details page and then go back to the previous page. 
-import '../style/SearchResults.css';
+import {Link, useLocation} from 'react-router-dom'; 
 import axios from 'axios';
 const apikey = "a4bd042c";
 
 
 const SearchResults =({movies, searchTerm, setMovies, currentPage, setCurrentPage, totalResults, favorites, setFavorites}) => {
 
-    const totalPages = Math.ceil(totalResults/10);  //rounded up to the nearest integer
+    const totalPages = Math.ceil(totalResults/10);  
 
     const location = useLocation();
     
@@ -17,7 +16,7 @@ const SearchResults =({movies, searchTerm, setMovies, currentPage, setCurrentPag
             setCurrentPage(location.state.currentPage);
             setMovies(location.state.movies || []);
         }
-    }, [location.state, setMovies, setCurrentPage]);   //Dependencies(useEffect)
+    }, [location.state, setMovies, setCurrentPage]);   
 
     const handlePageChange = async (page) =>{
         const response = await axios.get(`http://www.omdbapi.com/?apikey=${apikey}&s=${searchTerm}&page=${page}`);

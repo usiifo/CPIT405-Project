@@ -1,4 +1,4 @@
-import React, {useState} from 'react'; //a React Hook that lets you add a state variable to your component.
+import React, {useState} from 'react'; 
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
@@ -6,9 +6,12 @@ import SearchResults from './pages/SearchResults';
 import MovieDetails from './pages/MovieDetails';
 import Favorites from './pages/Favorites';
 import './style/App.css';
+import MovieManAI from './pages/MovieManAI'; 
+import MoodResults from './pages/MoodResults';
 
 
-const App = () => {   //app components
+
+const App = () => {   
   //State to hold the list of movies
   const [movies, setMovies] = useState([]);
   //State to hold the search Term
@@ -44,9 +47,9 @@ const App = () => {   //app components
           <Route 
             path="/searchResults"
             element={
-              <SearchResults        //passing the props
+              <SearchResults        
               movies={movies}
-              searchTerm={searchTerm}                                            //Route to search results page
+              searchTerm={searchTerm} //Route to search results page
               setMovies={setMovies}
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}
@@ -59,8 +62,8 @@ const App = () => {   //app components
 
         <Route 
             path="/moviesDetails/:id"
-            element={               //passing the props
-              <MovieDetails                                                        //Route to movie details page
+            element={               
+              <MovieDetails  //Route to movie details page
                 favorites={favorites}       
                 setFavorites={setFavorites}
               />                                                       
@@ -70,10 +73,22 @@ const App = () => {   //app components
           <Route
             path="/favorites"
             element={              
-              <Favorites favorites={favorites} />}     //passing  the favorites state                            
+              <Favorites favorites={favorites} />}                              
+          />
+
+<Route 
+            path="/MovieManAI"
+            element={
+              <MovieManAI />
+            }
           />
           
-              </Routes>
+          <Route path="/moodResults/:mood" element={<MoodResults />} />
+          
+        </Routes>
+        
+
+
             </div>
           </Router>
       ) 
