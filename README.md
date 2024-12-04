@@ -33,4 +33,4 @@ Search Results
 
 Movie Details
 
-Favorites Page
+Favorites Page# Movie-Home
